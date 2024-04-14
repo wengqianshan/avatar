@@ -70,7 +70,7 @@ function getRandomOptions(rng) {
 }
 
 module.exports = (seed) => {
-  const rng = seed ? seedrandom(seed) : Math.random;
+  const rng = seed ? seedrandom(`${seed}\0`) : Math.random;
 
   const html = RDS.renderToString(
     React.createElement(BigHead, getRandomOptions(rng))
